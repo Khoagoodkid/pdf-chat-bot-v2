@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 import { FiZap } from "react-icons/fi";
 // import { Highlight } from "prism-react-renderer";
 // const url = "http://98.84.189.252:8080";
-const url = "https://pdf-chat-bot-server-5faa40653e49.herokuapp.com"
-// const url = "http://127.0.0.1:8080";
+// const url = "https://pdf-chat-bot-server-5faa40653e49.herokuapp.com";
+const url = "http://127.0.0.1:8080";
 
 function Main() {
   const [file, setFile] = useState(null);
@@ -93,17 +93,19 @@ function Main() {
           PDFinder
         </h2>
         <p className="mb-6 text-center text-base leading-snug text-slate-400 sm:text-lg sm:leading-snug md:text-xl md:leading-snug">
-          Your intelligent assistant for unraveling knowledge <br/>hidden within
-          every page of your PDFs.
+          Your intelligent assistant for unraveling knowledge <br />
+          hidden within every page of your PDFs.
         </p>
       </div>
-      <section className="relative w-full  z-20 p-10 md:py-20 flex flex-col md:flex-row px-10 gap-3">
-        <PDFViewer
-          status={fileStatus}
-          setFile={setFile}
-          processFile={processFile}
-        />
-        <div className="flex flex-col w-1/2  pt-6 gap-6 sticky top-0">
+      <section className="relative w-full  z-20 p-10 md:py-20 flex flex-col lg:flex-row px-10 gap-3">
+        <div className="w-full lg:w-1/2">
+          <PDFViewer
+            status={fileStatus}
+            setFile={setFile}
+            processFile={processFile}
+          />
+        </div>
+        <div className="flex flex-col lg:w-1/2 w-full pt-6 gap-6 sticky top-0">
           <form
             onSubmit={onChatHandler}
             className="flex flex-col gap-2 border-[1px] border-white rounded-sm p-3"
@@ -128,13 +130,13 @@ function Main() {
                   key={2}
                 >
                   <div
-                    className={`p-2  rounded-lg ${
+                    className={`p-3 w-1/2  rounded-lg ${
                       block.role == "user"
                         ? "rounded-br-none bg-[gray] text-white"
                         : "rounded-bl-none bg-[lightgray]"
                     }`}
                   >
-                    <span>{block.content}</span>
+                    <pre className=" h-auto   whitespace-pre-wrap" >{block.content}</pre>
                   </div>
                 </div>
               );
@@ -143,7 +145,8 @@ function Main() {
         </div>
       </section>
       <footer className="text-white border-t-[1px] border-t-white bg-gradient-to-br from-slate-950/50 to-slate-900/80 w-full py-3 flex items-center justify-center">
-        Chat With PDF | Built by James Ha <span className="text-[red]">&#10084;</span>
+        Chat With PDF | Built by James Ha{" "}
+        <span className="text-[red]">&#10084;</span>
       </footer>
       <BGGrid />
     </div>

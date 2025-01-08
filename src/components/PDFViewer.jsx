@@ -60,7 +60,7 @@ export const PDFViewer = ({ status, setFile, processFile }) => {
   scrollModePluginInstance.SwitchScrollMode(ScrollMode.Page)
 
   return (
-    <div className="container w-1/2 pt-0 ">
+    <div className="container w-full pt-0 ">
       <br></br>
 
       <form className="form-group" onSubmit={handlePdfFileSubmit}>

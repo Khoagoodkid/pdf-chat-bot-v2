@@ -61,6 +61,7 @@ function Main() {
     );
     formData.append("message", msg);
     formData.append("file", file); // selectedFile is the uploaded file
+    setMsg("");
 
     try {
       const response = await axios.post(`${url}/send-msg`, formData, {
@@ -70,7 +71,6 @@ function Main() {
       });
 
       setHistory(response.data.history);
-      setMsg("");
     } catch (error) {
       console.error(error);
     }

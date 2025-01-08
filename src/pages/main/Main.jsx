@@ -130,10 +130,10 @@ function Main() {
                   key={2}
                 >
                   <div
-                    className={`p-3 w-1/2  rounded-lg ${
+                    className={`p-3  rounded-lg ${
                       block.role == "user"
-                        ? "rounded-br-none bg-[gray] text-white"
-                        : "rounded-bl-none bg-[lightgray]"
+                        ? "rounded-br-none bg-[gray] text-white w-1/2"
+                        : "rounded-bl-none bg-[lightgray] w-2/3"
                     }`}
                   >
                     <pre className=" h-auto   whitespace-pre-wrap" >{block.content}</pre>

@@ -5,8 +5,8 @@ import PDFViewer from "../../components/PDFViewer";
 import { motion } from "framer-motion";
 import { FiZap } from "react-icons/fi";
 // import { Highlight } from "prism-react-renderer";
-const url = "http://98.84.189.252:8080";
-// const url = "https://pdf-chat-bot-v2-server.onrender.com"
+// const url = "http://98.84.189.252:8080";
+const url = "https://pdf-chat-bot-server-5faa40653e49.herokuapp.com"
 // const url = "http://127.0.0.1:8080";
 
 function Main() {
